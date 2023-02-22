@@ -1,0 +1,27 @@
+.header{
+    background-color: rgb(236, 239, 238);
+}
+
+.my-badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #E15843;
+    border-radius: 26px;
+    padding: 1px 6px;
+    width: 17px;
+    height: 17px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    margin-top: -28px;
+    margin-left: -5px;
+}
+
+.header .align-me {
+    display: flex;
+    align-items: center;
+} 
