@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import React, { useReducer } from 'react';
 import RoutesApp from './routes';

@@ -10,7 +10,7 @@ export default class ProductsService {
   }
 
   async getProductsDetails(id) {
-    const response = await retoFrontAxios.get(`/product/:${id}`);
+    const response = await retoFrontAxios.get(`/product/${id}`);
     return response.data;
   }
 }
