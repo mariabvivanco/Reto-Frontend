@@ -1,0 +1,102 @@
+.contain-image > .see-div {
+  /*height: fit-content;
+    width: fit-content;*/
+  background-color: white;
+  position: relative;
+  bottom: 94px;
+  /* top: -600px; */
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.principal-image {
+  position: relative;
+  border-radius: 8px;
+}
+#main-image {
+  /*max-width:100%;*/
+  /*max-height:100%;
+    max-width: 640px;*/
+  min-height: 500px;
+  max-width: 100%;
+}
+.principal-image .fav-div {
+  height: fit-content;
+  width: fit-content;
+  background-color: white;
+  position: relative;
+  left: -50px;
+  /* top: -600px; */
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contain-description {
+  padding-left: 24px;
+  padding-top: 24px;
+}
+
+.marca {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: right;
+  color: #739f07;
+}
+.marca-number {
+  color: #2e4003;
+}
+
+.share-name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2e4003;
+}
+
+.product-model {
+  font-style: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1a1a1a;
+}
+
+.product-description {
+  font-style: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #1a1a1a;
+  margin-top: -10px;
+}
+
+.product-det {
+  padding-bottom: 28px;
+  padding-top: 30px;
+  margin-left: 32px;
+  border-bottom: 2px solid #d7dfd3;
+}
+
+.all-detail-card {
+  padding: 80px 110px!important;
+  margin-bottom: 110px;
+  gap: 32px;
+  width: 100%;
+  background: #ebf0e9;
+  border-radius: 16px;
+}
+
+.sub-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #376122;
+}
+
+.half-width {
+    width: 60%;
+}

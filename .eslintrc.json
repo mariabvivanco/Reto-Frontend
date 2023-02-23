@@ -20,6 +20,7 @@
         "linebreak-style": "off",
         "react/js-indent": 0,
         "no-trailing-spaces": "off",
-        "arrow-body-style": "off"
+        "arrow-body-style": "off",
+        "import/no-cycle": "off"
     }
 }
