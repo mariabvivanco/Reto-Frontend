@@ -19,11 +19,13 @@ const ProductDet = () => {
   const { productDet } = state;
   const [isLoading, setIsLoading] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
-  
+
   const loadProduct = async () => {
     setIsLoading(true);
     try {
-      const response = await productsServiceInstance.getProductsDetails(productID);
+      const response = await productsServiceInstance.getProductsDetails(
+        productID,
+      );
       setIsLoading(false);
       dispatch({ type: SET_PRODUCT, payload: response });
     } catch (error) {
@@ -35,7 +37,7 @@ const ProductDet = () => {
   useEffect(() => {
     loadProduct();
   }, [productID]);
-  
+
   return (
     <Container>
       <Header />
@@ -45,28 +47,25 @@ const ProductDet = () => {
             <Col sx="auto">
               <Spinner />
             </Col>
-            
           </Row>
-        )
-          
-          : (
+        ) : (
+          <Row>
             <Row>
-              <Row>
-                <Col xs="12" md="6">
-                  <ImageProduct image={productDet.imgUrl} />
-                </Col>
-                <Col xs="12" md="6">
-                  <Description product={productDet} setShowDetails={setShowDetails} />
-                </Col>
-              
-              </Row>
-              <Row>
-                {showDetails && <AllDetails product={productDet} />}
-              </Row>
+              <Col xs="12" md="6">
+                <ImageProduct image={productDet.imgUrl} />
+              </Col>
+              <Col xs="12" md="6">
+                <Description
+                  product={productDet}
+                  showDetails={showDetails}
+                  setShowDetails={setShowDetails}
+                />
+              </Col>
             </Row>
-          )} 
+            <Row>{showDetails && <AllDetails product={productDet} />}</Row>
+          </Row>
+        )}
       </Container>
-      
     </Container>
   );
 };

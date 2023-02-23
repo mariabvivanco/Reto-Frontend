@@ -41,6 +41,7 @@ const AllDetails = ({ product }) => {
                 direction="horizontal"
                 style={{ alignItems: 'start' }}
                 gap={3}
+                key={el.name}
               >
                 <div>
                   <CircleI fill="#739F07" />

@@ -1,10 +1,7 @@
 .contain-image > .see-div {
-  /*height: fit-content;
-    width: fit-content;*/
   background-color: white;
   position: relative;
   bottom: 94px;
-  /* top: -600px; */
   margin: 10px;
   border-radius: 8px;
   cursor: pointer;
@@ -15,9 +12,6 @@
   border-radius: 8px;
 }
 #main-image {
-  /*max-width:100%;*/
-  /*max-height:100%;
-    max-width: 640px;*/
   min-height: 500px;
   max-width: 100%;
 }
@@ -27,7 +21,6 @@
   background-color: white;
   position: relative;
   left: -50px;
-  /* top: -600px; */
   margin: 10px;
   border-radius: 8px;
   cursor: pointer;
@@ -81,8 +74,11 @@
 }
 
 .all-detail-card {
-  padding: 80px 110px!important;
-  margin-bottom: 110px;
+  padding-top: 10% !important;
+  padding-bottom: 10%;
+  padding-left: 5% !important;
+  margin-bottom: 50px;
+  margin-top: 50px;
   gap: 32px;
   width: 100%;
   background: #ebf0e9;
@@ -90,13 +86,56 @@
 }
 
 .sub-title {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 30px;
-    color: #376122;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #376122;
 }
 
 .half-width {
-    width: 60%;
+  width: 60%;
+}
+
+.selectRad {
+  background-color: #739f07 !important;
+  border-radius: 50% !important;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e3eccd !important;
+  border-color: linear-gradient(0deg, #e3eccd, #e3eccd) !important;
+  background-color: linear-gradient(0deg, #739f07, #739f07) !important;
+}
+
+#overRad {
+  border: 2px solid #739f07 !important;
+  border-radius: 50% !important;
+  width: 16px;
+  height: 16px;
+  margin-top: 0.25em;
+  background-color: #f1f6e7 !important;
+}
+
+.noSelectRad {
+  border: 2px solid #739f07 !important;
+  border-radius: 50% !important;
+  width: 16px;
+  height: 16px;
+  margin-top: 0.25em;
+  background-color: #ffffff !important;
+}
+
+.basket {
+  margin-top: 38px;
+}
+
+.drop-selector {
+  border: 1px solid #e3eccd;
+  border-radius: 8px;
+  width: max-content;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #ffffff;
+  margin-top: 16px;
+  padding: 16px;
 }

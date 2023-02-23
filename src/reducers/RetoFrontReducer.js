@@ -6,7 +6,7 @@ export const SET_PRODUCTS = 'SET_PRODUCTS';
 export const SET_PRODUCT = 'SET_PRODUCT';
 
 export const INITIAL_STATE = {
-  basket_product_count: 5,
+  basket_product_count: 0,
   products: [],
   productDet: {},
 };
