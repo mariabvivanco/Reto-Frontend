@@ -1,21 +1,20 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import {
   Container, Spinner, Row, Col, 
 } from 'react-bootstrap';
 import { productsServiceInstance } from '..';
 import { AppContext } from '../App';
 import Header from '../components/shared/Header';
+
 import ImageProduct from '../components/productsdet/ImageProduct';
 import Description from '../components/productsdet/Description';
 import { SET_PRODUCT } from '../reducers/RetoFrontReducer';
 
 import './products.css';
 import AllDetails from '../components/productsdet/AllDetails';
-import LeftSimple from '../components/icons/LeftSimple';
 
 const ProductDet = () => {
-  const navigate = useNavigate();
   const { state, dispatch } = useContext(AppContext);
   const { productID } = useParams();
   const { productDet } = state;
@@ -44,13 +43,7 @@ const ProductDet = () => {
     <Container>
       <Header />
       <Container className="container-page">
-        <Row>
-          <Col xs="auto" className="pointer" onClick={() => navigate('/products')}>
-            <LeftSimple />
-            -- Regresar
-          </Col>
-        </Row>
-        
+
         {isLoading ? (
           <Row className="align-me ">
             <Col sx="auto">

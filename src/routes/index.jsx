@@ -4,7 +4,7 @@ import React from 'react';
 import {
   BrowserRouter, Routes, Navigate, Route, 
 } from 'react-router-dom';
-import Products from '../pages/Products';
+
 import routes from './routes';
 
 const isAuthenticated = false;
@@ -45,7 +45,7 @@ const RoutesApp = () => {
             )}
           />
         ))}
-        <Route path="*" element={<Products />} />
+        <Route path="*" element={<Navigate to="/products" replace />} />
       </Routes>
     </BrowserRouter>
   );

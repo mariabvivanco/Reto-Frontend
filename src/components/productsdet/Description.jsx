@@ -22,7 +22,7 @@ import { SET_BASKET } from '../../reducers/RetoFrontReducer';
 
 const Description = ({ product, setShowDetails, showDetails }) => {
   // eslint-disable-next-line no-unused-vars
-  const { dispatch } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
   const [isLoading, setIsLoading] = useState(false);
   const [styleColors, setStyleColors] = useState('dropdown-button-noactiveT');
   const [color, setColor] = useState();
@@ -33,6 +33,7 @@ const Description = ({ product, setShowDetails, showDetails }) => {
   const [dimension, setDimension] = useState();
 
   const addBasket = async () => {
+    console.log('me llamaron');
     setIsLoading(true);
     try {
       const response = await basketServiceInstance.addProductBasket({

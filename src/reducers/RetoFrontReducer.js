@@ -9,6 +9,7 @@ export const INITIAL_STATE = {
   basket_product_count: 0,
   products: [],
   productDet: {},
+  date: null,
 };
 
 export const RetoFrontReducer = (state, action) => {
@@ -22,6 +23,7 @@ export const RetoFrontReducer = (state, action) => {
       return {
         ...state,
         products: action.payload,
+        date: new Date(),
       };  
     case SET_PRODUCT:
       return {
