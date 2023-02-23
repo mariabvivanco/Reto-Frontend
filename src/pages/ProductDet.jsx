@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
   Container, Spinner, Row, Col, 
 } from 'react-bootstrap';
@@ -12,8 +12,10 @@ import { SET_PRODUCT } from '../reducers/RetoFrontReducer';
 
 import './products.css';
 import AllDetails from '../components/productsdet/AllDetails';
+import LeftSimple from '../components/icons/LeftSimple';
 
 const ProductDet = () => {
+  const navigate = useNavigate();
   const { state, dispatch } = useContext(AppContext);
   const { productID } = useParams();
   const { productDet } = state;
@@ -42,14 +44,21 @@ const ProductDet = () => {
     <Container>
       <Header />
       <Container className="container-page">
+        <Row>
+          <Col xs="auto" className="pointer" onClick={() => navigate('/products')}>
+            <LeftSimple />
+            -- Regresar
+          </Col>
+        </Row>
+        
         {isLoading ? (
-          <Row className="align-me">
+          <Row className="align-me ">
             <Col sx="auto">
               <Spinner />
             </Col>
           </Row>
         ) : (
-          <Row>
+          <Row className="cont-prod">
             <Row>
               <Col xs="12" md="6">
                 <ImageProduct image={productDet.imgUrl} />

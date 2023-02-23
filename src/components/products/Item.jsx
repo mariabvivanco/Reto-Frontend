@@ -9,7 +9,7 @@ const Item = ({ product }) => {
   const navigate = useNavigate();
   const [changeColor, setChangeColor] = useState('changeButtomSelectNo'); 
   return (
-    <Col className="container-card-product">
+    <Col xs="12" md="3" className="container-card-product" onClick={() => navigate(`/product/${product.id}`)}>
       <Card className="card-product pointer">
         <div className="card-image-mine">
           <Card.Img
@@ -20,8 +20,7 @@ const Item = ({ product }) => {
           <div className="image_overlay">
             <Button
               id={changeColor}
-              className="blog-button"
-              style={{ marginBottom: '20px' }}
+              className="mov-button"
               onMouseOver={() => { setChangeColor('changeButtomSelect'); }} 
               onMouseOut={() => { setChangeColor('changeButtomSelectNo'); }}
               onClick={() => navigate(`/product/${product.id}`)}
