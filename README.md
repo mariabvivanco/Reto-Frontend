@@ -17,5 +17,5 @@ Compila la aplicación para modo producción.
 
 ## Documentación
 
-En public en la carpeta docs se encuentra un fichero llamado doc donde se encuantra el porque de las decisiones tomadas a la hora de la programación y lo que no se pudo lograr de los requerimientos del proyecto.
+En public  se encuentra un fichero llamado doc donde se encuantra el porque de las decisiones tomadas a la hora de la programación y lo que no se pudo lograr de los requerimientos del proyecto.
 
