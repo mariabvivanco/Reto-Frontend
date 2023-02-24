@@ -4,6 +4,7 @@
 export const SET_BASKET = 'SET_BASKET';
 export const SET_PRODUCTS = 'SET_PRODUCTS';
 export const SET_PRODUCT = 'SET_PRODUCT';
+export const INIT_STATE = 'INIT_STATE';
 
 export const INITIAL_STATE = {
   basket_product_count: 0,
@@ -29,7 +30,12 @@ export const RetoFrontReducer = (state, action) => {
       return {
         ...state,
         productDet: action.payload,
-      };          
+      };  
+    case INIT_STATE:
+      return {
+        ...state,
+        INITIAL_STATE,
+      };         
           
     default:
       break;

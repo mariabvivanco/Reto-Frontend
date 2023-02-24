@@ -33,7 +33,6 @@ const Description = ({ product, setShowDetails, showDetails }) => {
   const [dimension, setDimension] = useState();
 
   const addBasket = async () => {
-    console.log('me llamaron');
     setIsLoading(true);
     try {
       const response = await basketServiceInstance.addProductBasket({
@@ -75,7 +74,7 @@ const Description = ({ product, setShowDetails, showDetails }) => {
           </p>
         </Col>
         <Col xs="auto">
-          <Stack direction="horizontal">
+          <Stack direction="horizontal" gap={2}>
             <p className="share-name pt-3">Compartir</p>
             <ShareIcon />
           </Stack>
@@ -136,7 +135,7 @@ const Description = ({ product, setShowDetails, showDetails }) => {
         </Col>
       </Row>
       <Row className="justify-content-between">
-        <Col xs="6" md="6" className="align-center">
+        <Col xs="6" md="6" className="align-center mt-5">
           <Selector
             title="Colores"
             value={color}
@@ -146,7 +145,7 @@ const Description = ({ product, setShowDetails, showDetails }) => {
             setStyle={setStyleColors}
           />
         </Col>
-        <Col xs="6" md="6" className="align-center">
+        <Col xs="6" md="6" className="align-center mt-5">
           <Selector
             title="Dimensiones"
             value={dimension}
@@ -158,7 +157,7 @@ const Description = ({ product, setShowDetails, showDetails }) => {
         </Col>
       </Row>
       <Row className="justify-content-center basket">
-        <Col xs="auto">
+        <Col xs="auto" className="align-center">
           <Button disabled={(!(color && dimension) || isLoading)} onClick={() => addBasket(product)}>Añadir a la cesta</Button>
         </Col>
       </Row>

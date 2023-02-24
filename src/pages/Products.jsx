@@ -13,12 +13,13 @@ import './products.css';
 
 const Products = () => {
   const { state, dispatch } = useContext(AppContext);
-  const { products } = state;
+  const { products, date } = state;
   const [filterProducts, setFilterProducts] = useState(products);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState('');
   
   const loadProducts = async () => {
+    console.log('mandarona  cargar los productos');
     setIsLoading(true);
     try {
       const response = await productsServiceInstance.getProducts();
@@ -31,7 +32,11 @@ const Products = () => {
   };
 
   useEffect(() => {
-    loadProducts(); 
+    const oneHour = 1000 * 60 * 60;
+    const now = (new Date()).getTime();
+    if (!date || ((date) && (date + oneHour < now))) {
+      loadProducts(); 
+    } 
   }, []);
 
   useEffect(() => {
@@ -45,7 +50,7 @@ const Products = () => {
   }, [search, products]);
   
   return (
-    <Container>
+    <Container id="products">
       <Header />
       <Container className="container-page">
         <Row className="justify-content-between header-catalog">

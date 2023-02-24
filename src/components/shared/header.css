@@ -30,6 +30,7 @@
 .header .align-me {
     display: flex;
     align-items: center;
+    text-align: center;
 } 
 
 .logo{
@@ -85,4 +86,8 @@ margin-left: 10px;
   font-weight: 500 !important;
   font-size: 16px !important;
   line-height: 20px !important;
+}
+
+.mt-5{
+  margin-top: 5px;
 }

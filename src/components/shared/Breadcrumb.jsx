@@ -4,24 +4,23 @@
 import React from 'react';
 
 import { Breadcrumb } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './Breadcrumb.css';
 
 const BreadcrumbComponent = ({ data }) => {
-  const navigate = useNavigate();
   return (
     <Breadcrumb>
       {data && data.map((el, i) => {
         return (
-          <Breadcrumb.Item key={el.name} href={el.link} active={i === (data.length - 1)}>
-            {(i === data.length - 1) ? (
-              <span onClick={() => navigate(el.link)}>{el.name}</span>
-            ) : (
-              <span>
-                {el.name}
-              </span>
-            )}
+          <Breadcrumb.Item
+            key={el.name}
+            href={el.link}
+            active={i === (data.length - 1)} 
+            linkAs={Link} 
+            linkProps={{ to: el.link }}
+          >
+            {el.name} 
           </Breadcrumb.Item>
         );
       })}
