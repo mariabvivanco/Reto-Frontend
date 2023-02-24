@@ -10,16 +10,11 @@ export const AppContext = React.createContext([]);
 const App = () => {
   const [state, dispatch] = useReducer(RetoFrontReducer, INITIAL_STATE);
   return (
-    <ThemeProvider
-      breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
-      minBreakpoint="xxs"
-    >
-
+    <ThemeProvider breakpoints={['md', 'sm', 'xs']} minBreakpoint="xs">
       <AppContext.Provider value={{ state, dispatch }}>
         <RoutesApp />
       </AppContext.Provider>
     </ThemeProvider>
-  
   );
 };
 

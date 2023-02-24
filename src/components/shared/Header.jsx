@@ -1,12 +1,12 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable import/no-cycle */
 /* eslint-disable camelcase */
+
+// Header del proyecto
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import {
-  Navbar, Row, Col,  
-} from 'react-bootstrap';
+import { Navbar, Row, Col } from 'react-bootstrap';
 import { AppContext } from '../../App';
 import { getPath } from '../../services/utils';
 import Basket from '../icons/Basket';
@@ -19,7 +19,9 @@ const Header = () => {
   const { basket_product_count } = state;
   const [style, setStyle] = useState('header');
   const [data, setdata] = useState([]);
-  const isMobile = window.matchMedia('only screen and (max-width: 760px)').matches;
+  const isMobile = window.matchMedia(
+    'only screen and (max-width: 760px)',
+  ).matches;
 
   const listenScrollEvent = () => {
     if (window.scrollY > 50) {
@@ -47,7 +49,9 @@ const Header = () => {
               className="d-inline-block align-top menu menu-text-format"
             />
             {' '}
-            {!isMobile && <span className="color-green logo-name">Móviles</span>}
+            {!isMobile && (
+              <span className="color-green logo-name">Móviles</span>
+            )}
             {' '}
             {!isMobile && <span className="logo-desc">a tu medida</span>}
           </Link>
@@ -61,7 +65,6 @@ const Header = () => {
           {basket_product_count !== 0 && (
             <div className="my-badge">{basket_product_count}</div>
           )}
-          
         </Col>
       </Row>
     </Navbar>

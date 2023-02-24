@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+
+// Enrutado de la App
 import React from 'react';
 
 import {
@@ -12,7 +14,7 @@ const isAuthenticated = false;
 const PrivateRoute = ({ children }) => {
   if (!isAuthenticated) return <Navigate to="/login" />;
   return children;
-};  
+};
 
 const PublicRoute = ({ children }) => {
   return children;

@@ -29,7 +29,7 @@ const Selector = ({
         >
           {options.map((item) => {
             return (
-              <Dropdown.Item key={item.code}>
+              <Dropdown.Item key={item.code} className="drop-item">
                 <Row
                   className="justify-content-between"
                   onClick={() => {
@@ -37,11 +37,11 @@ const Selector = ({
                     setValue({ ...temp });
                   }}
                 >
-                  <Col md="auto" style={{ color: '#2e4003' }}>
+                  <Col base="auto" style={{ color: '#2e4003' }}>
                     {item.name}
                     {' '}
                   </Col>
-                  <Col xs="auto" style={{ marginLeft: '16px' }}>
+                  <Col base="auto" style={{ marginLeft: '16px' }}>
                     <div
                       className={
                         value && item.name === value.name

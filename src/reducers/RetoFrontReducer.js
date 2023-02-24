@@ -19,24 +19,24 @@ export const RetoFrontReducer = (state, action) => {
       return {
         ...state,
         basket_product_count: action.payload,
-      };   
+      };
     case SET_PRODUCTS:
       return {
         ...state,
         products: action.payload,
         date: new Date(),
-      };  
+      };
     case SET_PRODUCT:
       return {
         ...state,
         productDet: action.payload,
-      };  
+      };
     case INIT_STATE:
       return {
         ...state,
         INITIAL_STATE,
-      };         
-          
+      };
+
     default:
       break;
   }

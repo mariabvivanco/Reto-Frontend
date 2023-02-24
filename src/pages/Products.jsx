@@ -1,3 +1,5 @@
+// Página de Productos para mostrar el catalogo de móviles, página principal del proyecto
+
 import React, { useEffect, useState, useContext } from 'react';
 import {
   Container, Spinner, Row, Col, 
@@ -17,9 +19,8 @@ const Products = () => {
   const [filterProducts, setFilterProducts] = useState(products);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState('');
-  
+
   const loadProducts = async () => {
-    console.log('mandarona  cargar los productos');
     setIsLoading(true);
     try {
       const response = await productsServiceInstance.getProducts();
@@ -33,31 +34,31 @@ const Products = () => {
 
   useEffect(() => {
     const oneHour = 1000 * 60 * 60;
-    const now = (new Date()).getTime();
-    if (!date || ((date) && (date + oneHour < now))) {
-      loadProducts(); 
-    } 
+    const now = new Date().getTime();
+    if (!date || (date && date + oneHour < now)) {
+      loadProducts();
+    }
   }, []);
 
   useEffect(() => {
     if (search !== '') {
       const temp = products.filter(
-        (item) => item.brand.toUpperCase().includes(search) 
-        || item.model.toUpperCase().includes(search),
+        (item) => item.brand.toUpperCase().includes(search)
+          || item.model.toUpperCase().includes(search),
       );
-      setFilterProducts([...temp]); 
-    } else { setFilterProducts([...products]); }
+      setFilterProducts([...temp]);
+    } else {
+      setFilterProducts([...products]);
+    }
   }, [search, products]);
-  
+
   return (
     <Container id="products">
       <Header />
       <Container className="container-page">
         <Row className="justify-content-between header-catalog">
           <Col xs="12" md="auto">
-            <p className="product-model bold">
-              Catálogo de Móviles
-            </p>
+            <p className="product-model bold">Catálogo de Móviles</p>
           </Col>
           <Col xs="12" md="auto">
             <Search search={search} setSearch={setSearch} />
@@ -68,18 +69,16 @@ const Products = () => {
             <Col sx="auto">
               <Spinner />
             </Col>
-            
           </Row>
-        )
-          
-          : (
-            <Row>
-              {filterProducts.length > 0 
-              && filterProducts.map((item) => <Item key={item.id} product={item} />)}
-            </Row>
-          )} 
+        ) : (
+          <Row>
+            {filterProducts.length > 0
+              && filterProducts.map((item) => (
+                <Item key={item.id} product={item} />
+              ))}
+          </Row>
+        )}
       </Container>
-      
     </Container>
   );
 };

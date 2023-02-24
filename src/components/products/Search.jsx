@@ -1,7 +1,13 @@
 /* eslint-disable react/prop-types */
+// Buscador de catálogo
 import React, { useEffect } from 'react';
 import {
-  Row, Col, Button, Stack, InputGroup, FormControl,
+  Row,
+  Col,
+  Button,
+  Stack,
+  InputGroup,
+  FormControl,
 } from 'react-bootstrap';
 import { useDebounce } from '../../services/utils';
 import SearchI from '../icons/SearchI';
@@ -16,11 +22,10 @@ const Search = ({ search, setSearch }) => {
     setSearch(temp.toUpperCase());
   }, [debouncedSearch]);
 
-  const searchValueChangeHandler = (val) => {    
+  const searchValueChangeHandler = (val) => {
     setSearch(val);
   };
   return (
-   
     <Row>
       <Stack className="art-count-order" direction="horizontal">
         <Col md="auto">
@@ -33,29 +38,27 @@ const Search = ({ search, setSearch }) => {
               placeholder="Buscar marca y modelo"
               onChange={(event) => {
                 const temp = event.target.value;
-                searchValueChangeHandler(temp); 
+                searchValueChangeHandler(temp);
               }}
             />
           </InputGroup>
         </Col>
-                        
+
         <Col md="auto">
           <Button
             disabled={search === ''}
             variant="primary"
             className="btnProfileCat"
             size="sm"
-            onClick={() => { setSearch(search); }}
-            
+            onClick={() => {
+              setSearch(search);
+            }}
           >
             Buscar
-          </Button> 
+          </Button>
         </Col>
-                    
       </Stack>
-                    
     </Row>
-           
   );
 };
 

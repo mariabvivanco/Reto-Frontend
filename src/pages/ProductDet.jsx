@@ -1,3 +1,5 @@
+// Página de Detalles del Producto
+
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import {
@@ -43,7 +45,6 @@ const ProductDet = () => {
     <Container>
       <Header />
       <Container className="container-page">
-
         {isLoading ? (
           <Row className="align-me ">
             <Col sx="auto">
