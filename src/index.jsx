@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import reportWebVitals from './reportWebVitals';
+
+import BasketService from './services/BasketService';
+import ProductsService from './services/ProductsService';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+export const basketServiceInstance = new BasketService();
+export const productsServiceInstance = new ProductsService();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,12 +1,21 @@
-import React from 'react';
-import './App.css';
+/* eslint-disable import/no-cycle */
+/* eslint-disable react/jsx-no-constructed-context-values */
+import React, { useReducer } from 'react';
+import { ThemeProvider } from 'react-bootstrap';
+import RoutesApp from './routes';
+import { RetoFrontReducer, INITIAL_STATE } from './reducers/RetoFrontReducer';
 
-function App() {
+export const AppContext = React.createContext([]);
+
+const App = () => {
+  const [state, dispatch] = useReducer(RetoFrontReducer, INITIAL_STATE);
   return (
-    <div>
-      Aplicación Reto front-end
-    </div>
+    <ThemeProvider breakpoints={['md', 'sm', 'xs']} minBreakpoint="xs">
+      <AppContext.Provider value={{ state, dispatch }}>
+        <RoutesApp />
+      </AppContext.Provider>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
